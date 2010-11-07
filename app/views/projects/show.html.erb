@@ -1,0 +1,32 @@
+<p>
+  <b>Person:</b>
+  <%=h @project.person %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @project.price %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%=h @project.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @project.model %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%=h @project.color %>
+</p>
+
+<p>
+  <b>Last work done:</b>
+  <%=h @project.last_work_done %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(:id => @project) %> |
+<%= link_to 'Back', projects_path %>

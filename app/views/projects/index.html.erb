@@ -1,0 +1,33 @@
+<h1>Listing projects for <%=h @person.full_name %></h1>
+
+<table>
+  <tr>
+    <th>Price</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Color</th>
+    <th>Last work done</th>
+    <th colspan=4>Actions</th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%=h project.price %></td>
+    <td><%=h project.make %></td>
+    <td><%=h project.model %></td>
+    <td><%=h project.color %></td>
+    <td id="last_work_<%= project.id %>">
+      <%=h time_ago_in_words(project.last_work_done) %> ago
+    </td>
+    <td><%= link_to 'Details', project_path(:id=>project) %></td>
+    <td><%= link_to 'Work done', work_done_path(:project_id => project.id, :action => 'work_done'), :confirm => 'Update the last worked on date?' %></td>
+    <td><%= link_to 'Edit', edit_project_path(:id =>project) %></td>
+    <td><%= link_to 'Destroy', project_path(:id=>project), :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New project', new_project_path %>

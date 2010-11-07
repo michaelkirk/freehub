@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
+
   map.resources :organizations
 
   # Authentication
@@ -17,6 +18,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :services, :path_prefix => '/:organization_key/people/:person_id'
   map.resources :notes, :path_prefix => '/:organization_key/people/:person_id'
   map.resources :taggings, :path_prefix => '/:organization_key/people/:person_id', :only => [:index, :create, :destroy]
+  map.resources :projects, :path_prefix => '/:organization_key/people/:person_id'
+  map.work_done '/:organization_key/people/:person_id/projects/:project_id/work_done', :controller => 'projects', :action => 'work_done'
+  #do |projects|
+    #projects.work_done :action => 'work_done', :controller => :projects_controller
+  #end
+
 
   map.day_visits ':organization_key/visits/:year/:month/:day',
           :controller => 'visits', :action => 'day',

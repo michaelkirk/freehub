@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  person: 
+  price: 9.99
+  make: MyString
+  model: MyString
+  color: MyString
+  last_work_done: 2010-09-18 16:10:51
+  created_by: 
+  organization: 
+
+two:
+  person: 
+  price: 9.99
+  make: MyString
+  model: MyString
+  color: MyString
+  last_work_done: 2010-09-18 16:10:51
+  created_by: 
+  organization: 

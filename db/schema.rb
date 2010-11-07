@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100626223127) do
+ActiveRecord::Schema.define(:version => 20100918231051) do
 
   create_table "notes", :force => true do |t|
     t.text     "text"
@@ -61,6 +61,25 @@ ActiveRecord::Schema.define(:version => 20100626223127) do
   add_index "people", ["created_by_id"], :name => "fk_people_created_by"
   add_index "people", ["organization_id"], :name => "fk_people_organization"
   add_index "people", ["updated_by_id"], :name => "fk_people_updated_by"
+
+  create_table "projects", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "price",           :limit => 10, :precision => 10, :scale => 0
+    t.string   "make"
+    t.string   "model"
+    t.string   "color"
+    t.datetime "last_work_done"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.integer  "organization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["created_by_id"], :name => "fk_projects_created_by"
+  add_index "projects", ["organization_id"], :name => "fk_projects_organization"
+  add_index "projects", ["person_id"], :name => "fk_projects_person"
+  add_index "projects", ["updated_by_id"], :name => "fk_projects_updated_by"
 
   create_table "roles", :force => true do |t|
     t.string   "name",              :limit => 40
@@ -136,6 +155,8 @@ ActiveRecord::Schema.define(:version => 20100626223127) do
     t.integer  "person_id"
     t.boolean  "staff"
     t.boolean  "member"
+    t.datetime "start_at"
+    t.datetime "end_at"
   end
 
   add_index "visits", ["created_by_id"], :name => "fk_visits_created_by"
