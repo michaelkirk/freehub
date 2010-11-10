@@ -1,4 +1,4 @@
-== Freehub
+= Freehub
 
 Freehub is a Rails application created by the San Francisco Bike Kitchen
 to track members and visits to the shop in San Francisco.
@@ -6,4 +6,14 @@ to track members and visits to the shop in San Francisco.
 It is built as a multi-tentant system and deployed at http://freehub.bikekitchen.org
 where it is also used by several other community bike shops.
 
-The project home is http://github.com/asalant/freehub. For project details, support, developer guide and more see http://wiki.github.com/asalant/freehub/.
+This project home is http://github.com/asalant/freehub. For project details, support, developer guide and more see http://wiki.github.com/asalant/freehub/.
+
+== bicicocina fork
+This is a fork of freehub for the Bicycle Kitchen in Los Angeles. 
+
+Included features in the fork are tracking of a persons projects. 
+
+A person starts a project by picking out a bike, in some state of disrepair, and, for an agreed upon cost-of-completion, we'll store the project for them until they're done fixing it up. 
+
+Projects have a deadline. Occasionally a project will be abandoned or take excessively long to complete. Sometimes a client will complete a project, "lose it", and immediately start a new project bike several times in sucession. Hopefully, we can use this tool to track the flow of projects through the kitchen to our clients, gaining a better understanding of who we serve and how they use the space, while also mitigating the cost of anyone taking advantage of the space.
+
